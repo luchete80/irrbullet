@@ -9,3 +9,7 @@ add_library (irrbullet SHARED ${SOURCES})
 
 target_link_libraries (irrbullet irrlicht Bullet3Common BulletSoftBody BulletDynamics BulletCollision BulletInverseDynamicsUtils
                                 BulletInverseDynamics LinearMath)
+								
+#add_executable (helloworld "examples/helloworldexample.cpp"
+							"examples/main.cpp")
+#target_link_libraries (helloworld irrbullet irrlicht Bullet3Common BulletSoftBody BulletDynamics
