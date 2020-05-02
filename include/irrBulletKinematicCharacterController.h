@@ -58,7 +58,8 @@ public:
 		playerStep(world, dt);
 	}
 
-	void setUpAxis(irr::u32 axis);
+	//void setUpAxis(irr::u32 axis);
+	void setUp(const irr::core::vector3df& up);
 
 	/*! 
 		This is neither a direction nor a velocity, but the amount to
