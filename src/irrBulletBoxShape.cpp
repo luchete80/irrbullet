@@ -13,29 +13,20 @@ using namespace irr;
 using namespace core;
 using namespace scene;
 
-IBoxShape::IBoxShape(ISceneNode* const n, f32 m, bool overrideMargin)
-{
+IBoxShape::IBoxShape ( ISceneNode* const n, f32 m, bool overrideMargin ) {
     node = n;
     mass = m;
-
 	type = ECollisionShapeType::ECST_BOX;
-
     createShape(overrideMargin);
 }
 
-void IBoxShape::createShape(bool overrideMargin)
-{
+void IBoxShape::createShape ( bool overrideMargin ) {
     node->updateAbsolutePosition();
-
     const vector3df& extent = node->getBoundingBox().getExtent() + f32((overrideMargin) ? 0.04:0.0);
 
-    if(node->getType() == ESNT_CUBE)
-    {
+    if( node->getType ( ) == ESNT_CUBE ) {
         shape = new btBoxShape(irrlichtToBulletVector(extent));
-    }
-
-    else
-    {
+    } else {
         shape = new btBoxShape(irrlichtToBulletVector(extent * 0.5));
     }
 
