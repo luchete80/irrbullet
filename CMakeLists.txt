@@ -18,8 +18,13 @@ target_link_libraries (helloworld irrbullet)
 add_executable (softbody "examples/SoftBody/softbodyexample.cpp"
 							"examples/Softbody/main.cpp"
 							"examples/framework/exampleframework.cpp")
-							
 target_link_libraries (softbody irrbullet)
+
+add_executable (softbody2 "examples/SoftBody2/softbodyexample2.cpp"
+							"examples/Softbody2/main.cpp"
+							"examples/framework/exampleframework.cpp")							
+							
+target_link_libraries (softbody2 irrbullet)
 
 add_executable (character "examples/Character/characterexample.cpp"
 							"examples/Character/main.cpp"
