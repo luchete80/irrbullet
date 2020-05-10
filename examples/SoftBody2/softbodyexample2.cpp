@@ -159,6 +159,8 @@ ISoftBody* CSoftbodyExample::createSoftbodyType(u32 type, const vector3df& posit
 	
 	
 	//NEW
+	//http://irrlicht.sourceforge.net/forum/viewtopic.php?f=1&t=52148
+	device->getSceneManager()->getParameters()->setAttribute(scene::COLLADA_CREATE_SCENE_INSTANCES, true);
 	device->getSceneManager()->getMesh("ExampleCar.dae");
     scene::IMeshCache* cache = device->getSceneManager()->getMeshCache();
     for (int i = 0; i < cache->getMeshCount (); i++) {
@@ -168,9 +170,9 @@ ISoftBody* CSoftbodyExample::createSoftbodyType(u32 type, const vector3df& posit
 	
 	
 	// OLD
-	device->getSceneManager()->getMeshCache()->removeMesh(device->getSceneManager()->getMeshCache()->getMeshByName("ExampleCar.dae"));
-	auto mesh = device->getSceneManager()->getMesh("ExampleCar.dae");
-	softbodyNode = device->getSceneManager()->addMeshSceneNode(mesh);
+	// device->getSceneManager()->getMeshCache()->removeMesh(device->getSceneManager()->getMeshCache()->getMeshByName("ExampleCar.dae"));
+	// auto mesh = device->getSceneManager()->getMesh("ExampleCar.dae");
+	// softbodyNode = device->getSceneManager()->addMeshSceneNode(mesh);
 	// OLD
 	
 	//softbodyNode->setMaterialTexture(0, device->getVideoDriver()->getTexture("detailmap3.jpg"));
